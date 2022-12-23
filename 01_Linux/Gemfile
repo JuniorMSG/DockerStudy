@@ -1,0 +1,284 @@
+source 'https://rubygems.org'
+
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+#gem 'activesupport', path: "~/jobplanet.github/rails/activesupport"
+gem 'rails', '4.1.12'
+gem 'io-console'
+#gem 'rack', '~> 1.5.2'
+#gem 'hashie', '~> 3.5.5'
+
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+# gem 'sass-rails', github: 'rails/sass-rails', branch: 'master'
+# gem 'sass-rails'
+#gem 'compass', '~> 0.12'
+#gem 'compass-rails'    # v2 requires compass 1.0 which requires too high a version of sass for sass-rails to survive
+#gem 'compass-rails', github: "braincommerce/compass-rails", branch: "rails41fix"
+# Try new compass rails which includes fix for sprite subfolder issue
+gem 'compass-rails', '~> 3.0.2'
+
+gem 'oily_png'
+
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
+
+gem 'asset_sync'
+
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails', '~> 3.1.3'
+gem 'jquery-ui-rails'
+
+# datetimepicker :  https://github.com/TrevorS/bootstrap3-datetimepicker-rails
+gem 'bootstrap-sass'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.0'
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', '~> 0.4.0', require: false
+end
+
+gem 'newrelic_rpm', '~> 8.0'
+
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+
+
+# Enable Chrome Extension(RailsPanel) debugger
+gem 'meta_request', group: :development
+gem 'spring', group: :development
+
+# Use Capistrano for deployment
+# gem 'capistrano', group: :development
+
+# gem 'logstash-logger', github: "braincommerce/logstash-logger", branch: 'logstash141'
+#gem 'logstash-logger', github: "braincommerce/logstash-logger", branch: 'master'
+gem 'cabin' # logstash-event @ e03b67d does not include cabin
+gem 'oj', '~> 2.13.1' # logstash-event @ e03b67d does not include oj
+
+# gem 'logstash-logger'
+gem 'logstash-logger', git: "https://github.com/pctj101/logstash-logger", branch: "v060redis_reconnect"
+# Need better JSON from e03b67d
+# gem "logstash-event", github: "logstash/logstash", ref: 'e03b67d'
+# gem "logstash-event", path: "~/jobplanet.github/logstash"
+gem "logstash-event", git: "https://github.com/pctj101/logstash", branch: "event_timestamp"
+
+# gem "lograge"
+# need to use logstash-event["message"] rather than .mesage
+gem "lograge", git: "https://github.com/pctj101/lograge", branch: "logstash_event_14x"
+
+
+# Use debugger
+# gem 'debugger', group: [:development, :test]
+
+platforms :ruby do
+        #gem "mysql", ">= 2.8.1"
+        gem 'mysql2', '~> 0.3.20'
+        gem 'rmagick', require: false
+        gem 'therubyracer'
+        #gem 'unicorn'
+        gem "puma", '~> 2.11.1'
+end
+#gem 'resque'
+#gem 'resque-pool'
+
+gem 'sinatra', :require => nil
+gem 'sidekiq', '< 5'
+gem 'sidekiq-failures'
+gem 'sidekiq-qlimit', '~> 0' # https://github.com/BrainCom/sidekiq-qlimit
+gem 'redis-namespace'
+gem 'redis'
+
+gem 'libv8', '~> 3.16.14.7'
+gem 'composite_primary_keys'
+
+gem 'activeresource'
+gem 'rest-client'
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'elasticsearch-persistence', require: 'elasticsearch/persistence/model'
+
+gem 'barista'
+gem "tzinfo"
+gem 'mechanize'
+gem 'sanitize'
+gem 'tactful_tokenizer'
+gem 'google_drive'
+gem 'country-select'
+
+
+#gem "omniauth", '~> 1.4.2'
+gem "omniauth-facebook"
+gem "omniauth-twitter"
+gem 'omniauth-linkedin'
+gem 'omniauth-google-oauth2'
+gem 'devise'
+gem 'carrierwave'
+gem 'fog'
+gem 'aws-s3', git: "https://github.com/braincommerce/aws-s3", require: "aws/s3"
+gem 'doorkeeper', '~> 3.0.0'
+
+gem 'ancestry'
+gem 'acts-as-taggable-on'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'kaminari'
+gem 'groupdate'
+# PaperTrail lets you track changes to your models' data. It's good for auditing or versioning.
+gem 'paper_trail', '~> 5.0'
+
+gem 'user_agent_parser'
+gem 'browser'
+
+gem "aws-ses", "~> 0.5.0", :require => 'aws/ses'	 # rails 4
+gem "sendgrid"
+
+gem 'twitter', '~> 5.17.0'
+gem 'fb_graph2', git: "https://github.com/braincommerce/fb_graph2.git"
+gem 'gravtastic'
+
+#smartling api ruby client
+#gem 'smartling'
+
+gem 'mustache'
+gem 'roo'
+gem 'ejs'
+gem 'eco'
+# gem 'rqrcode'
+gem 'redis-rails'
+gem 'memcached_store'
+gem 'snappy', '~> 0.0.17'
+
+#gem 'ahoy_matey', github: "pctj101/ahoy", branch: "nogeocode"
+#gem 'ahoy_email'
+
+gem 'rails3-jquery-autocomplete'
+gem "best_in_place"
+gem "twitter-bootstrap-rails"
+gem 'chartkick'
+
+# Also install via commandline: "gem install pry byebug"
+gem 'pry-byebug', '~> 3.1.0'
+gem 'rbtrace'
+
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'simplecov', :require => false
+
+  gem 'minitest-rails-capybara'
+  gem 'ruby-prof'
+  # gem 'minitest-colorize'
+  gem 'minitest-reporters' # https://github.com/kern/minitest-reporters
+  # Mock util for Unit Test
+  gem 'mocha'
+  gem "fakeweb", "~> 1.3"
+  gem "test-unit"
+end
+
+# Linters
+group :development do
+  gem 'traceroute'
+  # gem 'brakeman', :require => false
+  gem 'rubocop', '~> 0.49.0', require: false
+
+  # uncomment rack-mini-profiler when profiling or tracking sql request are required for development.
+  gem 'rack-mini-profiler'
+  #gem "rubycritic", :require => false
+  #gem "ruby-lint", :require => false
+  gem 'guard'
+  gem 'guard-test'
+  gem 'guard-minitest'
+  gem 'terminal-notifier-guard'
+  gem 'web-console', '~> 2.0'
+  #gem 'react-rails-hot-loader'
+  gem 'hirb', '~> 0.7.3'
+  gem 'rb-readline'
+end
+
+# The push notification service for Ruby.
+gem 'rpush'
+gem 'rpush-redis'
+
+gem 'axlsx', git: "https://github.com/randym/axlsx", ref: '776037c0fc799bb09da8c9ea47980bd3bf296874'
+
+# jQCloud gem for drawing word cloud
+gem "jqcloud-rails"
+
+# Presto Ruby Client
+gem 'presto-client'
+
+# AWS S3 API
+gem 'aws-sdk', '~> 2'
+
+gem 'sprockets', '~> 3.0'
+gem 'sprockets-es6'
+
+# String compare (Jaro-Winkler algorithm)
+gem 'fuzzy-string-match'
+
+gem "i18n-js", "3.0.0"
+
+gem 'wkhtmltopdf-binary'
+
+gem 'wicked_pdf'
+
+gem 'scrypt', '~> 3.0.6'
+
+gem "react_on_rails", "~> 6",  :git => 'https://github.com/braincommerce/react_on_rails', :branch => 'cwd_asset'
+
+gem "httparty"
+
+gem "ununiga", "1.0.5"   # fix version because we have patch of gem (config/initializers/josa_picker.rb)
+
+# CKEditor https://github.com/galetahub/ckeditor
+gem 'ckeditor', git: 'https://github.com/galetahub/ckeditor'
+gem 'mini_magick'
+
+# rubyzip CVE-2017-5946
+gem "rubyzip", '~> 1.2.1'
+# untested about 1.6.7.1
+gem "nokogiri", '~> 1.8.2'
+
+# For Alri assets : https://github.com/FortAwesome/font-awesome-sass
+gem 'font-awesome-sass'
+
+#gem "dalli", github: "braincommerce/dalli", branch: "bc_aws_elasticache"
+gem "dalli"
+gem 'dalli-elasticache'
+
+gem 'googleauth'
+
+gem 'memory_profiler', group: [:development, :test, :staging]
+
+gem 'rack-cors', require: 'rack/cors'
+gem 'http', '~> 1.0'
+gem 'rack-protection', '~> 1.5.5'
+gem 'redis-store' # Useful for development cache debugging
+
+gem 'pdf-reader'
+gem 'yomu'
+
+gem 'rotp', '~> 5.1'
+gem "jwt"
+gem 'ruby-statistics', '2.1.1'
+
+gem 'influxdb-client', '~> 1.9.0'
+
+gem 'mimemagic', '0.3.2'
+gem 'net-sftp', '2.1.2'
+gem 'net-ssh', '2.6.8'
